@@ -8,22 +8,22 @@ def frequency_queries(queries):
 
     for op, elem in queries:
         if op == 1:
-            if memory[elem] > 0 and frequency[memory[elem]] > 0: 
+            if memory[elem] > 0 and frequency[memory[elem]] > 0:
                 frequency[memory[elem]] -= 1
-            
+
             memory[elem] += 1
             frequency[memory[elem]] += 1
 
         elif op == 2:
             if memory[elem] > 0:
                 freq = memory[elem]
-                
+
                 if freq > 0:
                     frequency[freq] -= 1
                     frequency[freq - 1] += 1
 
                 memory[elem] -= 1
-        
+
         else:
             if frequency[elem] > 0:
                 result.append(1)
